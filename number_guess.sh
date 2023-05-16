@@ -59,3 +59,9 @@ fi
 fi
 
 done
+
+echo "You guessed it in $COUNTER tries. The secret number was $NUMBER. Nice job!"
+
+#Adding game to games table
+NEW_ID=$($PSQL "select user_id from users where username ilike '$USERNAME' ")
+INSERT_GAME=$($PSQL "insert into games(user_id, guesses) values( $NEW_ID, $COUNTER)")
