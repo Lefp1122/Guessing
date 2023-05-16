@@ -19,8 +19,10 @@ echo "Welcome, $USERNAME! It looks like this is your first time here."
 
 #if ID is found in the table.
 else 
+GAMES_PLAYED=$($PSQL "select count(game_id) from games where user_id = $ID_VERIFY ")
+BEST_GAME=$($PSQL "select min(guesses) from games where user_id = $ID_VERIFY ")
 
-echo "Welcome back, $USERNAME! You have played <games_played> games, and your best game took <best_game> guesses."
+echo "Welcome back, $USERNAME! You have played $GAMES_PLAYED games, and your best game took $BEST_GAME guesses."
 
 fi
 
