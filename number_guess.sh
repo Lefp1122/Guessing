@@ -44,7 +44,6 @@ echo -e "\nGuess the secret number between 1 and 1000:"
 
 #Generating Number from 1 to 1000
 NUMBER=$[ $RANDOM % 1000 + 1]
-echo $NUMBER
 
 #Adding contants.
 
@@ -60,7 +59,7 @@ read GUESS
 if [[ ! $GUESS =~  ^[0-9]+$ ]]
 then 
 
-echo "That is not an integer, guess again"
+echo "That is not an integer, guess again:"
 
 else
 
