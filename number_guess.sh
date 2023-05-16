@@ -3,9 +3,22 @@
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
 echo " ~~~~ Number Guesssing Game ~~~~"
-echo -e "\nEnter your username:"
+
 
 read USERNAME
+ok=0
+
+while [[ $ok = 0 ]]
+do
+ echo -e "\nEnter your username:"
+  read USERNAME
+  if [ ${#USERNAME} -gt 22 ]
+  then
+    echo Too long - 22 characters max
+  else
+    ok=1
+  fi
+done
 
 #looking for username in users table
 ID_VERIFY=$($PSQL "select user_id from users where username ilike '$USERNAME' ")
