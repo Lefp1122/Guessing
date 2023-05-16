@@ -30,7 +30,30 @@ echo -e "\nGuess the secret number between 1 and 1000:"
 
 #Generating Number from 1 to 1000
 NUMBER=$[ $RANDOM % 1000 + 1]
+echo $NUMBER
 
+#Adding contants.
 
-#Looping throuhg the inputs to count the guesses.
+COUNTER=0
+GUESS=0
+#Looping through the inputs to count the guesses.
 
+while [ $GUESS != $NUMBER ]
+do
+
+((COUNTER++))
+read GUESS
+
+echo $COUNTER
+
+if [[ $GUESS < $NUMBER ]]
+then 
+echo "It's higher than that, guess again:"
+
+else
+
+echo "It's lowerr than that, guess again:"
+
+fi
+
+done
