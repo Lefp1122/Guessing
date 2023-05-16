@@ -45,15 +45,17 @@ do
 read GUESS
 
 echo $COUNTER
-
+#IF guess is lower than number
 if [[ $GUESS < $NUMBER ]]
 then 
 echo "It's higher than that, guess again:"
 
 else
-
-echo "It's lowerr than that, guess again:"
-
+#IF Guess is higher than Number
+if [[ $GUESS > $NUMBER ]]
+then 
+echo "It's lower than that, guess again:"
+fi
 fi
 
 done
