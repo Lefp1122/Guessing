@@ -43,10 +43,16 @@ GUESS=0
 while [ $GUESS != $NUMBER ]
 do
 
-((COUNTER++))
 read GUESS
 
-echo $COUNTER
+if [[ ! $GUESS =~  ^[0-9]+$ ]]
+then 
+
+echo "That is not an integer, guess again"
+
+else
+
+((COUNTER++))
 #IF guess is lower than number
 if [[ $GUESS < $NUMBER ]]
 then 
@@ -60,6 +66,7 @@ echo "It's lower than that, guess again:"
 fi
 fi
 
+fi
 done
 
 echo "You guessed it in $COUNTER tries. The secret number was $NUMBER. Nice job!"
