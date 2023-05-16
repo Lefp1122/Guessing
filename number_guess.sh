@@ -5,7 +5,6 @@ PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 echo " ~~~~ Number Guesssing Game ~~~~"
 
 
-read USERNAME
 ok=0
 
 while [[ $ok = 0 ]]
