@@ -2,14 +2,11 @@
 
 PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
 
-echo " ~~~~ Number Guesssing Game ~~~~"
-
-
 ok=0
 
 while [[ $ok = 0 ]]
 do
- echo -e "\nEnter your username:"
+ echo "Enter your username:"
   read USERNAME
   if [ ${#USERNAME} -gt 22 ]
   then
@@ -40,7 +37,7 @@ fi
 
 #starting the guessing name
 
-echo -e "\nGuess the secret number between 1 and 1000:"
+echo "Guess the secret number between 1 and 1000:"
 
 #Generating Number from 1 to 1000
 NUMBER=$[ $RANDOM % 1000 + 1]
